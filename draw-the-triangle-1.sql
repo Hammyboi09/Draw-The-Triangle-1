@@ -1,0 +1,10 @@
+WITH RECURSIVE PatternCTE AS (
+  SELECT 20 AS Num
+  UNION ALL
+  SELECT Num - 1
+  FROM PatternCTE
+  WHERE Num > 1
+)
+
+SELECT REPEAT('* ', Num) AS Pattern
+FROM PatternCTE;
